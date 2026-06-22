@@ -45,6 +45,7 @@ proxies:
     password: i6FTL4gX9RphDT4ou3rO
     sni: tokyo-hy2.jknas.top
     obfs: salamander
+    obfs-password: i6FTL4gX9RphDT4ou3rO
 
   - name: Tokyo-Reality
     type: vless
