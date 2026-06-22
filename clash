@@ -4,9 +4,6 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 
-# =====================
-# DNS 防污染
-# =====================
 dns:
   enable: true
   listen: 0.0.0.0:1053
@@ -24,12 +21,8 @@ dns:
     geoip: true
     geoip-code: CN
 
-# =====================
-# 代理节点
-# =====================
 proxies:
 
-  # ===== 美国 Reality =====
   - name: SanJose-Reality
     type: vless
     server: sanjose-reality.jknas.top
@@ -45,7 +38,6 @@ proxies:
     client-fingerprint: chrome
     encryption: none
 
-  # ===== 日本 HY2 =====
   - name: Tokyo-HY2
     type: hysteria2
     server: tokyo-hy2.jknas.top
@@ -54,7 +46,6 @@ proxies:
     sni: tokyo-hy2.jknas.top
     obfs: salamander
 
-  # ===== 日本 Reality =====
   - name: Tokyo-Reality
     type: vless
     server: tokyo-reality.jknas.top
@@ -70,7 +61,6 @@ proxies:
     client-fingerprint: chrome
     encryption: none
 
-  # ===== WS备用 =====
   - name: EdgeTunnel-WS
     type: vless
     server: edt2.jknas.top
@@ -85,9 +75,6 @@ proxies:
       headers:
         Host: edt2.jknas.top
 
-# =====================
-# 代理组（智能选路）
-# =====================
 proxy-groups:
 
   - name: PROXY
@@ -135,38 +122,28 @@ proxy-groups:
     proxies:
       - EdgeTunnel-WS
 
-# =====================
-# 分流规则（核心）
-# =====================
 rules:
 
-  # ===== 本地 =====
   - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
   - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
   - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
   - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
   - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
 
-  # ===== 中国直连 =====
   - GEOIP,CN,DIRECT,no-resolve
   - GEOSITE,cn,DIRECT
 
-  # ===== 日本 =====
   - GEOIP,JP,AUTO-JP,no-resolve
   - GEOSITE,jp,AUTO-JP
 
-  # ===== 美国 =====
   - GEOIP,US,AUTO-US,no-resolve
   - GEOSITE,us,AUTO-US
 
-  # ===== 新加坡 =====
   - GEOIP,SG,AUTO-SG,no-resolve
 
-  # ===== AI / Google / GitHub =====
   - GEOSITE,openai,PROXY
   - GEOSITE,google,PROXY
   - GEOSITE,github,PROXY
   - GEOSITE,youtube,PROXY
 
-  # ===== 默认 =====
   - MATCH,PROXY
