@@ -1,1 +1,172 @@
-bWl4ZWQtcG9ydDogNzg5MAphbGxvdy1sYW46IHRydWUKbW9kZTogcnVsZQpsb2ctbGV2ZWw6IGluZm8KZXh0ZXJuYWwtY29udHJvbGxlcjogMTI3LjAuMC4xOjkwOTAKCiMgPT09PT09PT09PT09PT09PT09PT09CiMgRE5TIOmYsuaxoeafkwojID09PT09PT09PT09PT09PT09PT09PQpkbnM6CiAgZW5hYmxlOiB0cnVlCiAgbGlzdGVuOiAwLjAuMC4wOjEwNTMKICBlbmhhbmNlZC1tb2RlOiBmYWtlLWlwCgogIG5hbWVzZXJ2ZXI6CiAgICAtIGh0dHBzOi8vMjIzLjUuNS41L2Rucy1xdWVyeQogICAgLSBodHRwczovLzExOS4yOS4yOS4yOS9kbnMtcXVlcnkKCiAgZmFsbGJhY2s6CiAgICAtIGh0dHBzOi8vMS4xLjEuMS9kbnMtcXVlcnkKICAgIC0gaHR0cHM6Ly84LjguOC44L2Rucy1xdWVyeQoKICBmYWxsYmFjay1maWx0ZXI6CiAgICBnZW9pcDogdHJ1ZQogICAgZ2VvaXAtY29kZTogQ04KCiMgPT09PT09PT09PT09PT09PT09PT09CiMg5Luj55CG6IqC54K5CiMgPT09PT09PT09PT09PT09PT09PT09CnByb3hpZXM6CgogICMgPT09PT0g576O5Zu9IFJlYWxpdHkgPT09PT0KICAtIG5hbWU6IFNhbkpvc2UtUmVhbGl0eQogICAgdHlwZTogdmxlc3MKICAgIHNlcnZlcjogc2Fuam9zZS1yZWFsaXR5LmprbmFzLnRvcAogICAgcG9ydDogNDQzCiAgICB1dWlkOiAwNjU2MGYyYi00OTc1LTQxMDQtYmMzZi03OWY4MDE1YWI2NWUKICAgIG5ldHdvcms6IHRjcAogICAgdGxzOiB0cnVlCiAgICBmbG93OiB4dGxzLXJwcngtdmlzaW9uCiAgICBzZXJ2ZXJuYW1lOiB3d3cubWljcm9zb2Z0LmNvbQogICAgcmVhbGl0eS1vcHRzOgogICAgICBwdWJsaWMta2V5OiBvRXlLVlFMNTJUVU52SEN2eDJLeFZoWl94VHluY1Q0MGRNQjVheUpMcVVFCiAgICAgIHNob3J0LWlkOiA2YmE4NTE3OWUzMGQ0ZmMyCiAgICBjbGllbnQtZmluZ2VycHJpbnQ6IGNocm9tZQogICAgZW5jcnlwdGlvbjogbm9uZQoKICAjID09PT09IOaXpeacrCBIWTIgPT09PT0KICAtIG5hbWU6IFRva3lvLUhZMgogICAgdHlwZTogaHlzdGVyaWEyCiAgICBzZXJ2ZXI6IHRva3lvLWh5Mi5qa25hcy50b3AKICAgIHBvcnQ6IDQ0MwogICAgcGFzc3dvcmQ6IGk2RlRMNGdYOVJwaERUNG91M3JPCiAgICBzbmk6IHRva3lvLWh5Mi5qa25hcy50b3AKICAgIG9iZnM6IHNhbGFtYW5kZXIKCiAgIyA9PT09PSDml6XmnKwgUmVhbGl0eSA9PT09PQogIC0gbmFtZTogVG9reW8tUmVhbGl0eQogICAgdHlwZTogdmxlc3MKICAgIHNlcnZlcjogdG9reW8tcmVhbGl0eS5qa25hcy50b3AKICAgIHBvcnQ6IDQ0MwogICAgdXVpZDogM2NmYWIwMjMtMDE0MC00NTBjLWEyODAtM2JmZmZmZWYxMzA1CiAgICBuZXR3b3JrOiB0Y3AKICAgIHRsczogdHJ1ZQogICAgZmxvdzogeHRscy1ycHJ4LXZpc2lvbgogICAgc2VydmVybmFtZTogd3d3Lm1pY3Jvc29mdC5jb20KICAgIHJlYWxpdHktb3B0czoKICAgICAgcHVibGljLWtleTogRlZDVnh6STc3MTVJNnJvUkMyQXpXQTQ1RUkzTzFSLXBBNGY1NWs4QWxTOAogICAgICBzaG9ydC1pZDogNmJhODUxNzllMzBkNGZjMgogICAgY2xpZW50LWZpbmdlcnByaW50OiBjaHJvbWUKICAgIGVuY3J5cHRpb246IG5vbmUKCiAgIyA9PT09PSBXU+Wkh+eUqCA9PT09PQogIC0gbmFtZTogRWRnZVR1bm5lbC1XUwogICAgdHlwZTogdmxlc3MKICAgIHNlcnZlcjogZWR0Mi5qa25hcy50b3AKICAgIHBvcnQ6IDQ0MwogICAgdXVpZDogNWFiMWRjYWQtNTc5MS00ZDYxLThiZjMtYTdjNDljNjIwODAzCiAgICBuZXR3b3JrOiB3cwogICAgdGxzOiB0cnVlCiAgICBzZXJ2ZXJuYW1lOiBlZHQyLmprbmFzLnRvcAogICAgdWRwOiB0cnVlCiAgICB3cy1vcHRzOgogICAgICBwYXRoOiAvCiAgICAgIGhlYWRlcnM6CiAgICAgICAgSG9zdDogZWR0Mi5qa25hcy50b3AKCiMgPT09PT09PT09PT09PT09PT09PT09CiMg5Luj55CG57uE77yI5pm66IO96YCJ6Lev77yJCiMgPT09PT09PT09PT09PT09PT09PT09CnByb3h5LWdyb3VwczoKCiAgLSBuYW1lOiBQUk9YWQogICAgdHlwZTogc2VsZWN0CiAgICBwcm94aWVzOgogICAgICAtIEFVVE8tR0xPQkFMCiAgICAgIC0gQVVUTy1KUAogICAgICAtIEFVVE8tVVMKICAgICAgLSBBVVRPLVNHCiAgICAgIC0gRElSRUNUCgogIC0gbmFtZTogQVVUTy1HTE9CQUwKICAgIHR5cGU6IHVybC10ZXN0CiAgICB1cmw6IGh0dHA6Ly93d3cuZ3N0YXRpYy5jb20vZ2VuZXJhdGVfMjA0CiAgICBpbnRlcnZhbDogMzAwCiAgICB0b2xlcmFuY2U6IDUwCiAgICBwcm94aWVzOgogICAgICAtIFNhbkpvc2UtUmVhbGl0eQogICAgICAtIFRva3lvLVJlYWxpdHkKICAgICAgLSBUb2t5by1IWTIKICAgICAgLSBFZGdlVHVubmVsLVdTCgogIC0gbmFtZTogQVVUTy1KUAogICAgdHlwZTogdXJsLXRlc3QKICAgIHVybDogaHR0cDovL3d3dy5nc3RhdGljLmNvbS9nZW5lcmF0ZV8yMDQKICAgIGludGVydmFsOiAzMDAKICAgIHRvbGVyYW5jZTogNTAKICAgIHByb3hpZXM6CiAgICAgIC0gVG9reW8tUmVhbGl0eQogICAgICAtIFRva3lvLUhZMgoKICAtIG5hbWU6IEFVVE8tVVMKICAgIHR5cGU6IHVybC10ZXN0CiAgICB1cmw6IGh0dHA6Ly93d3cuZ3N0YXRpYy5jb20vZ2VuZXJhdGVfMjA0CiAgICBpbnRlcnZhbDogMzAwCiAgICB0b2xlcmFuY2U6IDUwCiAgICBwcm94aWVzOgogICAgICAtIFNhbkpvc2UtUmVhbGl0eQoKICAtIG5hbWU6IEFVVE8tU0cKICAgIHR5cGU6IHVybC10ZXN0CiAgICB1cmw6IGh0dHA6Ly93d3cuZ3N0YXRpYy5jb20vZ2VuZXJhdGVfMjA0CiAgICBpbnRlcnZhbDogMzAwCiAgICB0b2xlcmFuY2U6IDUwCiAgICBwcm94aWVzOgogICAgICAtIEVkZ2VUdW5uZWwtV1MKCiMgPT09PT09PT09PT09PT09PT09PT09CiMg5YiG5rWB6KeE5YiZ77yI5qC45b+D77yJCiMgPT09PT09PT09PT09PT09PT09PT09CnJ1bGVzOgoKICAjID09PT09IOacrOWcsCA9PT09PQogIC0gSVAtQ0lEUiwxMjcuMC4wLjAvOCxESVJFQ1Qsbm8tcmVzb2x2ZQogIC0gSVAtQ0lEUiwxMC4wLjAuMC84LERJUkVDVCxuby1yZXNvbHZlCiAgLSBJUC1DSURSLDE3Mi4xNi4wLjAvMTIsRElSRUNULG5vLXJlc29sdmUKICAtIElQLUNJRFIsMTkyLjE2OC4wLjAvMTYsRElSRUNULG5vLXJlc29sdmUKICAtIElQLUNJRFIsMTAwLjY0LjAuMC8xMCxESVJFQ1Qsbm8tcmVzb2x2ZQoKICAjID09PT09IOS4reWbveebtOi/niA9PT09PQogIC0gR0VPSVAsQ04sRElSRUNULG5vLXJlc29sdmUKICAtIEdFT1NJVEUsY24sRElSRUNUCgogICMgPT09PT0g5pel5pysID09PT09CiAgLSBHRU9JUCxKUCxBVVRPLUpQLG5vLXJlc29sdmUKICAtIEdFT1NJVEUsanAsQVVUTy1KUAoKICAjID09PT09IOe+juWbvSA9PT09PQogIC0gR0VPSVAsVVMsQVVUTy1VUyxuby1yZXNvbHZlCiAgLSBHRU9TSVRFLHVzLEFVVE8tVVMKCiAgIyA9PT09PSDmlrDliqDlnaEgPT09PT0KICAtIEdFT0lQLFNHLEFVVE8tU0csbm8tcmVzb2x2ZQoKICAjID09PT09IEFJIC8gR29vZ2xlIC8gR2l0SHViID09PT09CiAgLSBHRU9TSVRFLG9wZW5haSxQUk9YWQogIC0gR0VPU0lURSxnb29nbGUsUFJPWFkKICAtIEdFT1NJVEUsZ2l0aHViLFBST1hZCiAgLSBHRU9TSVRFLHlvdXR1YmUsUFJPWFkKCiAgIyA9PT09PSDpu5jorqQgPT09PT0KICAtIE1BVENILFBST1hZ
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:9090
+
+# =====================
+# DNS 防污染
+# =====================
+dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  enhanced-mode: fake-ip
+
+  nameserver:
+    - https://223.5.5.5/dns-query
+    - https://119.29.29.29/dns-query
+
+  fallback:
+    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query
+
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+
+# =====================
+# 代理节点
+# =====================
+proxies:
+
+  # ===== 美国 Reality =====
+  - name: SanJose-Reality
+    type: vless
+    server: sanjose-reality.jknas.top
+    port: 443
+    uuid: 06560f2b-4975-4104-bc3f-79f8015ab65e
+    network: tcp
+    tls: true
+    flow: xtls-rprx-vision
+    servername: www.microsoft.com
+    reality-opts:
+      public-key: oEyKVQL52TUNvHCvx2KxVhZ_xTyncT40dMB5ayJLqUE
+      short-id: 6ba85179e30d4fc2
+    client-fingerprint: chrome
+    encryption: none
+
+  # ===== 日本 HY2 =====
+  - name: Tokyo-HY2
+    type: hysteria2
+    server: tokyo-hy2.jknas.top
+    port: 443
+    password: i6FTL4gX9RphDT4ou3rO
+    sni: tokyo-hy2.jknas.top
+    obfs: salamander
+
+  # ===== 日本 Reality =====
+  - name: Tokyo-Reality
+    type: vless
+    server: tokyo-reality.jknas.top
+    port: 443
+    uuid: 3cfab023-0140-450c-a280-3bffffef1305
+    network: tcp
+    tls: true
+    flow: xtls-rprx-vision
+    servername: www.microsoft.com
+    reality-opts:
+      public-key: FVCVxzI7715I6roRC2AzWA45EI3O1R-pA4f55k8AlS8
+      short-id: 6ba85179e30d4fc2
+    client-fingerprint: chrome
+    encryption: none
+
+  # ===== WS备用 =====
+  - name: EdgeTunnel-WS
+    type: vless
+    server: edt2.jknas.top
+    port: 443
+    uuid: 5ab1dcad-5791-4d61-8bf3-a7c49c620803
+    network: ws
+    tls: true
+    servername: edt2.jknas.top
+    udp: true
+    ws-opts:
+      path: /
+      headers:
+        Host: edt2.jknas.top
+
+# =====================
+# 代理组（智能选路）
+# =====================
+proxy-groups:
+
+  - name: PROXY
+    type: select
+    proxies:
+      - AUTO-GLOBAL
+      - AUTO-JP
+      - AUTO-US
+      - AUTO-SG
+      - DIRECT
+
+  - name: AUTO-GLOBAL
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - SanJose-Reality
+      - Tokyo-Reality
+      - Tokyo-HY2
+      - EdgeTunnel-WS
+
+  - name: AUTO-JP
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - Tokyo-Reality
+      - Tokyo-HY2
+
+  - name: AUTO-US
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - SanJose-Reality
+
+  - name: AUTO-SG
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - EdgeTunnel-WS
+
+# =====================
+# 分流规则（核心）
+# =====================
+rules:
+
+  # ===== 本地 =====
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+
+  # ===== 中国直连 =====
+  - GEOIP,CN,DIRECT,no-resolve
+  - GEOSITE,cn,DIRECT
+
+  # ===== 日本 =====
+  - GEOIP,JP,AUTO-JP,no-resolve
+  - GEOSITE,jp,AUTO-JP
+
+  # ===== 美国 =====
+  - GEOIP,US,AUTO-US,no-resolve
+  - GEOSITE,us,AUTO-US
+
+  # ===== 新加坡 =====
+  - GEOIP,SG,AUTO-SG,no-resolve
+
+  # ===== AI / Google / GitHub =====
+  - GEOSITE,openai,PROXY
+  - GEOSITE,google,PROXY
+  - GEOSITE,github,PROXY
+  - GEOSITE,youtube,PROXY
+
+  # ===== 默认 =====
+  - MATCH,PROXY
