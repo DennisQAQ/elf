@@ -1,150 +1,303 @@
 mixed-port: 7890
 allow-lan: true
+bind-address: "*"
 mode: rule
 log-level: info
+ipv6: false
 external-controller: 127.0.0.1:9090
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: strict
+global-client-fingerprint: chrome
 
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+# ------------------- DNS -------------------
 dns:
   enable: true
   listen: 0.0.0.0:1053
+  ipv6: false
+  prefer-h3: false
+  use-hosts: true
+  use-system-hosts: false
+  respect-rules: true
   enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - "*.lan"
+    - "*.localdomain"
+    - "+.local"
+    - "time.*.com"
+    - "ntp.*.com"
+    - "*.market.xiaomi.com"
+    - "localhost.ptlogin2.qq.com"
+
+  # 国内域名走的解析服务器（不走代理，直接查国内DNS）
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
 
   nameserver:
-    - https://223.5.5.5/dns-query
-    - https://119.29.29.29/dns-query
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
 
+  # 国外/被代理的域名走加密DNS，避免污染
   fallback:
     - https://1.1.1.1/dns-query
-    - https://8.8.8.8/dns-query
+    - https://dns.google/dns-query
+    - tls://8.8.4.4:853
 
   fallback-filter:
     geoip: true
     geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+    domain:
+      - "+.google.com"
+      - "+.facebook.com"
+      - "+.youtube.com"
 
+  nameserver-policy:
+    "geosite:cn":
+      - 223.5.5.5
+      - 119.29.29.29
+    "geosite:geolocation-!cn":
+      - https://1.1.1.1/dns-query
+      - https://dns.google/dns-query
+
+# ------------------- 代理节点 -------------------
 proxies:
-
-  - name: SanJose-Reality
+  - name: "Sanjose-Reality"
     type: vless
     server: sanjose-reality.jknas.top
     port: 443
     uuid: 06560f2b-4975-4104-bc3f-79f8015ab65e
     network: tcp
     tls: true
+    udp: true
     flow: xtls-rprx-vision
     servername: www.microsoft.com
+    client-fingerprint: chrome
     reality-opts:
       public-key: oEyKVQL52TUNvHCvx2KxVhZ_xTyncT40dMB5ayJLqUE
       short-id: 6ba85179e30d4fc2
-    client-fingerprint: chrome
-    encryption: none
 
-  - name: Tokyo-HY2
+  - name: "Tokyo-HY2-1"
+    type: hysteria2
+    server: tokyo.jknas.top
+    port: 443
+    ports: 20000-30000
+    password: "90e998cc-5aa2-4519-b0a3-6f602a8caa81"
+    obfs: salamander
+    obfs-password: "8jK#p2L$m9N!q5R&vB7tW"
+    sni: tokyo.jknas.top
+    alpn:
+      - h3
+    up: "40 Mbps"
+    down: "45 Mbps"
+    skip-cert-verify: false
+
+  - name: "Tokyo-HY2-2"
     type: hysteria2
     server: tokyo-hy2.jknas.top
     port: 443
-    password: i6FTL4gX9RphDT4ou3rO
-    sni: tokyo-hy2.jknas.top
+    password: "8749n6yGsSNpLGGKJxw1"
     obfs: salamander
-    obfs-password: i6FTL4gX9RphDT4ou3rO
+    obfs-password: "i6FTL4gX9RphDT4ou3rO"
+    sni: tokyo-hy2.jknas.top
+    skip-cert-verify: false
 
-  - name: Tokyo-Reality
-    type: vless
-    server: tokyo-reality.jknas.top
-    port: 443
-    uuid: 3cfab023-0140-450c-a280-3bffffef1305
-    network: tcp
-    tls: true
-    flow: xtls-rprx-vision
-    servername: www.microsoft.com
-    reality-opts:
-      public-key: FVCVxzI7715I6roRC2AzWA45EI3O1R-pA4f55k8AlS8
-      short-id: 6ba85179e30d4fc2
-    client-fingerprint: chrome
-    encryption: none
-
-  - name: EdgeTunnel-WS
+  - name: "edgetunnel-backup"
     type: vless
     server: edt2.jknas.top
     port: 443
     uuid: 5ab1dcad-5791-4d61-8bf3-a7c49c620803
     network: ws
     tls: true
-    servername: edt2.jknas.top
     udp: true
+    servername: edt2.jknas.top
     ws-opts:
-      path: /
+      path: "/"
       headers:
         Host: edt2.jknas.top
 
+# ------------------- 策略组 -------------------
 proxy-groups:
-
-  - name: PROXY
+  - name: 🚀 节点选择
     type: select
     proxies:
-      - AUTO-GLOBAL
-      - AUTO-JP
-      - AUTO-US
-      - AUTO-SG
+      - 🔯 自动选择
+      - Sanjose-Reality
+      - Tokyo-HY2-1
+      - Tokyo-HY2-2
+      - edgetunnel-backup
       - DIRECT
 
-  - name: AUTO-GLOBAL
+  - name: 🔯 自动选择
     type: url-test
-    url: http://www.gstatic.com/generate_204
+    proxies:
+      - Sanjose-Reality
+      - Tokyo-HY2-1
+      - Tokyo-HY2-2
+    url: "http://www.gstatic.com/generate_204"
     interval: 300
     tolerance: 50
-    proxies:
-      - SanJose-Reality
-      - Tokyo-Reality
-      - Tokyo-HY2
-      - EdgeTunnel-WS
 
-  - name: AUTO-JP
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
+  - name: 📲 电报消息
+    type: select
     proxies:
-      - Tokyo-Reality
-      - Tokyo-HY2
+      - 🚀 节点选择
+      - Sanjose-Reality
+      - Tokyo-HY2-1
+      - Tokyo-HY2-2
+      - DIRECT
 
-  - name: AUTO-US
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
+  - name: 🎥 国外媒体
+    type: select
     proxies:
-      - SanJose-Reality
+      - 🚀 节点选择
+      - Sanjose-Reality
+      - Tokyo-HY2-1
+      - Tokyo-HY2-2
 
-  - name: AUTO-SG
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
+  - name: Ⓜ️ 微软服务
+    type: select
     proxies:
-      - EdgeTunnel-WS
+      - DIRECT
+      - 🚀 节点选择
 
+  - name: 🍎 苹果服务
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+
+  - name: 🛑 全球拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - DIRECT
+
+# ------------------- 规则集（geosite / geoip，社区维护，自动更新） -------------------
+rule-providers:
+  reject:
+    type: http
+    behavior: domain
+    format: text
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ads-all.list"
+    path: ./ruleset/reject.list
+    interval: 86400
+
+  icloud:
+    type: http
+    behavior: domain
+    format: text
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/icloud.list"
+    path: ./ruleset/icloud.list
+    interval: 86400
+
+  apple:
+    type: http
+    behavior: domain
+    format: text
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.list"
+    path: ./ruleset/apple.list
+    interval: 86400
+
+  google:
+    type: http
+    behavior: domain
+    format: text
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.list"
+    path: ./ruleset/google.list
+    interval: 86400
+
+  telegram:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.list"
+    path: ./ruleset/telegram.list
+    interval: 86400
+
+  proxy:
+    type: http
+    behavior: domain
+    format: text
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.list"
+    path: ./ruleset/proxy.list
+    interval: 86400
+
+  direct:
+    type: http
+    behavior: domain
+    format: text
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.list"
+    path: ./ruleset/direct.list
+    interval: 86400
+
+  microsoft:
+    type: http
+    behavior: domain
+    format: text
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.list"
+    path: ./ruleset/microsoft.list
+    interval: 86400
+
+  cncidr:
+    type: http
+    behavior: ipcidr
+    format: text
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.list"
+    path: ./ruleset/cncidr.list
+    interval: 86400
+
+  lancidr:
+    type: http
+    behavior: ipcidr
+    format: text
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.list"
+    path: ./ruleset/lancidr.list
+    interval: 86400
+
+# ------------------- 分流规则（按顺序匹配，从上到下） -------------------
 rules:
+  # 广告拦截
+  - RULE-SET,reject,🛑 全球拦截
 
-  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
-  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
-  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
-  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
-  - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+  # 局域网/私有地址直连
+  - RULE-SET,lancidr,🎯 全球直连
+  - RULE-SET,direct,🎯 全球直连
 
-  - GEOIP,CN,DIRECT,no-resolve
-  - GEOSITE,cn,DIRECT
+  # 国外常用服务分组
+  - RULE-SET,icloud,🍎 苹果服务
+  - RULE-SET,apple,🍎 苹果服务
+  - RULE-SET,microsoft,Ⓜ️ 微软服务
+  - RULE-SET,google,🎥 国外媒体
+  - RULE-SET,telegram,📲 电报消息
 
-  - GEOIP,JP,AUTO-JP,no-resolve
-  - GEOSITE,jp,AUTO-JP
+  # 需要代理访问的网站（GFW列表）
+  - RULE-SET,proxy,🚀 节点选择
 
-  - GEOIP,US,AUTO-US,no-resolve
-  - GEOSITE,us,AUTO-US
+  # 中国大陆 IP 段直连
+  - RULE-SET,cncidr,🎯 全球直连
 
-  - GEOIP,SG,AUTO-SG,no-resolve
+  # 局域网 IP 段直连
+  - GEOIP,LAN,🎯 全球直连,no-resolve
 
-  - GEOSITE,openai,PROXY
-  - GEOSITE,google,PROXY
-  - GEOSITE,github,PROXY
-  - GEOSITE,youtube,PROXY
-
-  - MATCH,PROXY
+  # 其余未匹配流量
+  - MATCH,🐟 漏网之鱼
