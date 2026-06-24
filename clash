@@ -78,7 +78,7 @@ proxies:
     tls: true
     udp: true
     flow: xtls-rprx-vision
-    servername: www.microsoft.com
+    servername: www.samsung.com
     client-fingerprint: chrome
     reality-opts:
       public-key: oEyKVQL52TUNvHCvx2KxVhZ_xTyncT40dMB5ayJLqUE
